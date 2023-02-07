@@ -4,7 +4,7 @@ import Usuario from 'App/Models/Usuario'
 
 export default class UsuariosController {
 
-    public async getListarusuarios(): Promise<Usuario[]>{
+    public async getListarUsuarios(): Promise<Usuario[]>{
 
         const user = await Usuario.all()
         return user;

@@ -19,7 +19,28 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import { Group } from '@japa/runner'
 
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+
+
+  Route.group (() => {
+    Route.get('/listar-usuarios', 'UsuariosController.getListarUsuarios')
+    Route.get('/listar-todo', 'UsuariosController.getListarUsuariosTodos')
+    Route.get('/listar-perfil','UsuariosController.getListarUsuariosYPerfil')
+    Route.get('/listar-publicaciones', 'Usuarios Controller.getListarUsuariosYPublicacion')
+    Route.get('/listar-usuarios-grupos','UsuariosController.getListarUsuariosGrupos')
+
+    Route.post('/registro-usuarios','UsuariosController.setRegistrarUsuarios')
+    Route.post('/registro-perfil', 'Perfils Controller.setRegistrarPerfil')
+    Route.post('/registro-publicacion','Publicaciones Controller.setRegistroPublicacion')
+    Route.post('/registro-grupo', 'GruposController.setRegistrarGrupo')
+    Route.post('/registro-usuario-grupo', 'GrupoUsuarios Controller.setRegistrarUsuarioGrupo')
+
+    }).prefix('/alcaldia')
+    
+
+
