@@ -52,6 +52,7 @@ export default class UsuariosController {
 
     private async getValidarUsuarioExistente(codigo_usuario: Number): Promise<Number>{
         const total = await Usuario.query().where({"codigo_usuario":codigo_usuario}).count('*').from('usuarios')
-        return parseInt(total[0]["count(*)"])
+        console.log(total)
+        return parseInt(total[0].$extras["count(*)"])
     }
 }
